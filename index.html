@@ -4,18 +4,391 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Paul Danso Baffoe | Applied Economist</title>
-    <meta name="description" content="Research portfolio of Paul Danso Baffoe, an applied economist specializing in econometrics, causal inference, labor economics, macroeconomics, forecasting, and reproducible research.">
+    <title>Paul Danso Baffoe | Applied Economist & Econometrician</title>
+    <meta name="description" content="Research portfolio of Paul Danso Baffoe, an applied economist specializing in econometrics, causal inference, labor economics, macroeconomics, forecasting, and reproducible economic research.">
+    <meta name="keywords" content="Paul Danso Baffoe, economist, econometrician, applied economics, causal inference, labor economics, macroeconomics, forecasting, R, Stata, SQL, policy analysis">
+    <meta name="author" content="Paul Danso Baffoe">
 
     <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        :root {
+            --navy: #17345f;
+            --navy-dark: #0f2748;
+            --blue: #2f67a6;
+            --blue-light: #eaf2fb;
+            --gold: #c58b2a;
+            --text: #26364a;
+            --muted: #667085;
+            --surface: #ffffff;
+            --border: #d9e2ec;
+            --shadow: 0 10px 28px rgba(15, 39, 72, 0.10);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            color: var(--text);
+            background: #f8fafc;
+            line-height: 1.65;
+        }
+
+        header {
+            background:
+                linear-gradient(135deg, rgba(15,39,72,.97), rgba(47,103,166,.92)),
+                url("assets/images/panel_rq1.png") center/cover no-repeat;
+            color: white;
+            padding: 5.5rem 0 4.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            margin-bottom: .6rem;
+        }
+
+        header .headline {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 700;
+            margin: 0 auto .6rem;
+            max-width: 980px;
+        }
+
+        header .specialties {
+            max-width: 980px;
+            margin: 0 auto 1.5rem;
+            opacity: .95;
+        }
+
+        .hero-actions,
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: .75rem;
+            margin-top: 1rem;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .8rem 1.1rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,.45);
+            transition: transform .2s ease, background .2s ease;
+        }
+
+        .hero-btn.primary {
+            background: white;
+            color: var(--navy-dark);
+        }
+
+        .hero-btn.secondary {
+            color: white;
+            background: rgba(255,255,255,.10);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            background: #f3f7fb;
+            color: var(--navy-dark);
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.35rem;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .4rem 1rem;
+            list-style: none;
+            margin: 0;
+            padding: .8rem 0;
+        }
+
+        nav a {
+            color: var(--navy-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav a:hover { color: var(--blue); }
+
+        .section {
+            padding: 4.5rem 0;
+        }
+
+        .section h2 {
+            color: var(--navy-dark);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-intro {
+            max-width: 900px;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .profile-photo {
+            width: 210px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.15rem;
+            box-shadow: 0 6px 18px rgba(15,39,72,.06);
+        }
+
+        .value-card i {
+            color: var(--blue);
+            font-size: 1.35rem;
+        }
+
+        .value-card h3 {
+            color: var(--navy-dark);
+            margin: .55rem 0 .35rem;
+        }
+
+        .projects-stack {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .research-project {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .research-project-header {
+            padding: 1.5rem 1.5rem .5rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            color: var(--navy-dark);
+            background: var(--blue-light);
+            border-radius: 999px;
+            padding: .32rem .7rem;
+            font-size: .85rem;
+            font-weight: 700;
+            margin-bottom: .7rem;
+        }
+
+        .research-project h3 {
+            color: var(--navy-dark);
+            font-family: "Playfair Display", serif;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .project-subtitle {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-top: .35rem;
+        }
+
+        .project-body {
+            padding: .5rem 1.5rem 1.5rem;
+        }
+
+        .project-body h4 {
+            color: var(--navy-dark);
+            margin: 1.1rem 0 .4rem;
+        }
+
+        .project-body ul {
+            padding-left: 1.2rem;
+        }
+
+        .method-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .45rem;
+            margin-top: .8rem;
+        }
+
+        .method-tags span {
+            background: #eef4fa;
+            color: var(--navy-dark);
+            border: 1px solid #d5e1ee;
+            padding: .35rem .65rem;
+            border-radius: 999px;
+            font-size: .86rem;
+            font-weight: 700;
+        }
+
+        .evidence-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            padding: 1.25rem 1.5rem 1.5rem;
+            background: #f4f7fb;
+            border-top: 1px solid var(--border);
+        }
+
+        .evidence-gallery figure {
+            margin: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(15,39,72,.06);
+        }
+
+        .evidence-gallery a {
+            display: block;
+            overflow: hidden;
+        }
+
+        .evidence-gallery img {
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+            background: white;
+            display: block;
+            transition: transform .25s ease;
+        }
+
+        .evidence-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        .evidence-gallery figcaption {
+            padding: .8rem .9rem;
+            font-size: .9rem;
+            color: var(--muted);
+        }
+
+        .project-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .7rem;
+            margin-top: 1.2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            text-decoration: none;
+            border-radius: 8px;
+            padding: .7rem .95rem;
+            font-weight: 700;
+        }
+
+        .btn-secondary {
+            background: #edf2f7;
+            color: var(--navy-dark);
+        }
+
+        .experience-item,
+        .education-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--blue);
+            border-radius: 12px;
+            padding: 1.25rem 1.4rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(15,39,72,.05);
+        }
+
+        .experience-item h3,
+        .education-item h3 {
+            color: var(--navy-dark);
+            margin-bottom: .2rem;
+        }
+
+        .skills-table {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .skill-column {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem;
+            box-shadow: 0 5px 15px rgba(15,39,72,.05);
+        }
+
+        .skill-header i,
+        .skill-header h3 {
+            color: var(--navy-dark);
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background: var(--navy-dark);
+            color: white;
+        }
+
+        @media (max-width: 720px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-photo {
+                width: 170px;
+                height: 170px;
+            }
+
+            .evidence-gallery img {
+                height: 190px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +396,28 @@
 <header>
     <div class="container">
         <h1>Paul Danso Baffoe, M.S., CBE</h1>
-        <p>Applied Economist | Econometrician | Economic Research Analyst | Data Scientist</p>
+
+        <p class="headline">
+            Applied Economist | Econometrician | Economic Research Analyst | Data Scientist
+        </p>
+
+        <p class="specialties">
+            Applied Econometrics • Causal Inference • Labor Economics • Macroeconomics • Forecasting • Policy Analysis • Reproducible Research
+        </p>
+
+        <div class="hero-actions">
+            <a href="#research" class="hero-btn primary">
+                <i class="fas fa-chart-line"></i> View Research
+            </a>
+
+            <a href="assets/Economics%20Analyst%20Specialist%20Resume.pdf" download class="hero-btn secondary">
+                <i class="fas fa-file-arrow-down"></i> Download CV
+            </a>
+
+            <a href="#contact" class="hero-btn secondary">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
 
         <div class="social-links">
             <a href="https://www.linkedin.com/in/paul-baffoe" target="_blank" rel="noopener noreferrer" title="LinkedIn">
@@ -34,16 +428,12 @@
                 <i class="fab fa-github"></i>
             </a>
 
-            <a href="https://rpubs.com/PaulBaffoe" target="_blank" rel="noopener noreferrer" title="RPubs Research Portfolio">
+            <a href="https://rpubs.com/PaulBaffoe" target="_blank" rel="noopener noreferrer" title="RPubs">
                 <i class="fab fa-r-project"></i>
             </a>
 
             <a href="mailto:kojosuccess88@gmail.com" title="Email">
                 <i class="fas fa-envelope"></i>
-            </a>
-
-            <a href="assets/Paul_Danso_Baffoe_Resume.pdf" download title="Download Resume">
-                <i class="fas fa-file-arrow-down"></i>
             </a>
         </div>
     </div>
@@ -66,26 +456,55 @@
 
 <section id="about" class="section">
     <div class="container">
-        <h2>About Me</h2>
+        <h2>Applied Economist Turning Complex Data into Decision-Ready Evidence</h2>
 
         <div class="about-content">
             <img src="assets/images/profile-photo.jpg" alt="Paul Danso Baffoe" class="profile-photo">
 
             <div class="about-text">
                 <p>
-                    I am an applied economist specializing in econometrics, causal inference, labor economics,
-                    macroeconomics, forecasting, and quantitative policy analysis. My work transforms complex
-                    public and private datasets into reproducible empirical research that supports evidence-based
-                    policy and business decision-making.
+                    I am an applied economist with experience in empirical research, forecasting, causal inference,
+                    quantitative modeling, and economic data analysis. I build reproducible analytical workflows that
+                    transform large public and private datasets into evidence for policy, strategy, and operational decisions.
                 </p>
 
                 <p>
-                    My research examines childcare access and labor supply, monetary-policy transmission through
-                    manufacturing inventories, geopolitical risk and energy markets, international fiscal-policy
-                    spillovers, and quantitative inventory planning. I use R, Stata, SQL, Python, SAS, Excel, and
-                    Power BI to build transparent analytical workflows, econometric models, dashboards, and
-                    publication-quality research outputs.
+                    My work spans labor economics, monetary-policy transmission, international macroeconomics,
+                    energy markets, supply-chain economics, and official statistics. I have used R, Stata, SQL,
+                    Python, SAS, Excel, and Power BI to develop econometric models, forecasting systems, dashboards,
+                    automated reporting tools, and publication-quality research products.
                 </p>
+
+                <p>
+                    I am particularly interested in economist and economic research roles where rigorous analysis,
+                    clear communication, reproducibility, and policy relevance are central to the work.
+                </p>
+            </div>
+        </div>
+
+        <div class="value-grid">
+            <div class="value-card">
+                <i class="fas fa-scale-balanced"></i>
+                <h3>Causal &amp; Policy Evaluation</h3>
+                <p>Difference-in-Differences, instrumental variables, regression discontinuity, event studies, and robustness analysis.</p>
+            </div>
+
+            <div class="value-card">
+                <i class="fas fa-wave-square"></i>
+                <h3>Macroeconomic Modeling</h3>
+                <p>SVAR, ARDL, local projections, regime-switching models, cointegration, impulse responses, and forecasting.</p>
+            </div>
+
+            <div class="value-card">
+                <i class="fas fa-database"></i>
+                <h3>Economic Data Engineering</h3>
+                <p>API retrieval, ETL, panel construction, data validation, reproducible pipelines, and public-data integration.</p>
+            </div>
+
+            <div class="value-card">
+                <i class="fas fa-comments"></i>
+                <h3>Decision Communication</h3>
+                <p>Clear translation of technical findings into policy, management, and business recommendations.</p>
             </div>
         </div>
     </div>
@@ -93,165 +512,268 @@
 
 <section id="research" class="section">
     <div class="container">
-        <h2>Working Papers &amp; Applied Projects</h2>
+        <h2>Working Papers &amp; Applied Research</h2>
 
-        <div class="projects-grid">
+        <p class="section-intro">
+            Selected research demonstrating causal inference, macroeconomic modeling, time-series analysis,
+            policy evaluation, and fully reproducible R workflows. Click any figure to open the full-resolution result.
+        </p>
 
-            <article class="project-card">
-                <img src="assets/images/childcare-constraint.png" alt="Childcare supply and parental labor supply research">
+        <div class="projects-stack">
 
-                <div class="project-card-content">
-                    <p class="project-status">Working paper — preparing for submission</p>
+            <article class="research-project">
+                <div class="research-project-header">
+                    <span class="project-status">Working paper — preparing for submission</span>
 
                     <h3>The Childcare Constraint</h3>
 
                     <p class="project-subtitle">
                         Estimating the causal effect of childcare access on labor supply in Central Minnesota
                     </p>
+                </div>
 
+                <div class="project-body">
                     <h4>Research Question</h4>
                     <p>
                         Does access to licensed childcare increase labor-force participation, employment, and
                         full-time work among parents of young children?
                     </p>
 
+                    <h4>Economic Contribution</h4>
+                    <p>
+                        This project links two decades of Minnesota childcare licensing records with ACS PUMS
+                        microdata and labor-market indicators to evaluate how childcare supply and subsidy eligibility
+                        shape parental labor-supply decisions.
+                    </p>
+
                     <h4>Key Findings</h4>
                     <ul>
                         <li>
-                            Responses diverge sharply by household type: single mothers show a significant negative
-                            labor-force participation response (β ≈ −0.14), while single fathers show a significant
+                            Responses differ sharply by household type: single mothers exhibit a significant negative
+                            labor-force participation response (β ≈ −0.14), while single fathers exhibit a significant
                             positive employment response (β ≈ +0.14) in higher-supply areas.
                         </li>
                         <li>
-                            Full-time employment drops sharply at the CCAP subsidy-eligibility threshold
-                            (RD estimate ≈ −0.30, p = 0.001), while labor-force participation and employment show no
-                            comparable discontinuity.
+                            Full-time employment falls sharply at the CCAP subsidy-eligibility threshold
+                            (RD estimate ≈ −0.30, p = 0.001), while labor-force participation and employment show
+                            no statistically meaningful discontinuity.
                         </li>
                         <li>
-                            The results suggest that how childcare assistance phases out may matter as much as the
-                            total amount of childcare available.
+                            The results suggest that the design and phaseout of childcare assistance may matter as
+                            much as the overall level of childcare supply.
                         </li>
                         <li>
-                            RD estimates are interpreted with bandwidth-sensitivity caveats, while placebo cutoffs
+                            RD estimates are interpreted with bandwidth-sensitivity caveats, and placebo cutoffs
                             show no comparable discontinuity.
                         </li>
                     </ul>
 
                     <p>
-                        <strong>Data:</strong> 20 years of Minnesota DHS/DCYF licensing records, ACS PUMS microdata
+                        <strong>Data:</strong> 20 years of Minnesota DHS/DCYF licensing records, ACS PUMS
                         (N ≈ 103,000), Minnesota DEED, QCEW, and FRED.
                     </p>
 
-                    <p>
-                        <strong>Methods:</strong> Difference-in-Differences / TWFE, HonestDiD, instrumental variables,
-                        and regression discontinuity at the CCAP threshold.
-                    </p>
-
-                    <p>
-                        <strong>Software:</strong> R (fixest, rdrobust, ivreg, did).
-                    </p>
+                    <div class="method-tags">
+                        <span>DiD / TWFE</span>
+                        <span>HonestDiD</span>
+                        <span>Instrumental Variables</span>
+                        <span>Regression Discontinuity</span>
+                        <span>R</span>
+                        <span>fixest</span>
+                        <span>rdrobust</span>
+                    </div>
 
                     <div class="project-buttons">
                         <a href="https://github.com/PBaffoe88" target="_blank" rel="noopener noreferrer" class="btn">
-                            Code <i class="fas fa-arrow-up-right-from-square"></i>
+                            <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
                 </div>
+
+                <div class="evidence-gallery">
+                    <figure>
+                        <a href="assets/images/panel_rq1.png" target="_blank">
+                            <img src="assets/images/panel_rq1.png" alt="Childcare supply expansion, labor supply outcomes, within-ZIP growth, and event study">
+                        </a>
+                        <figcaption>
+                            RQ1: Childcare supply expansion, labor-supply trends, within-ZIP supply growth, and event-study evidence around the 2018 expansion shock.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/panel_rq2.png" target="_blank">
+                            <img src="assets/images/panel_rq2.png" alt="Heterogeneity in childcare supply effects by subgroup">
+                        </a>
+                        <figcaption>
+                            RQ2: Heterogeneity by subgroup, including the contrasting labor-supply responses of single mothers and single fathers.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/panel_rq3.png" target="_blank">
+                            <img src="assets/images/panel_rq3.png" alt="Regression discontinuity at the CCAP eligibility threshold">
+                        </a>
+                        <figcaption>
+                            RQ3: Regression discontinuity at the 85% FPL CCAP eligibility threshold; full-time LATE ≈ −0.30 (p = 0.001).
+                        </figcaption>
+                    </figure>
+                </div>
             </article>
 
-            <article class="project-card">
-                <img src="assets/images/buffer-depletion.png" alt="Inventory channel of monetary policy research">
-
-                <div class="project-card-content">
-                    <p class="project-status">Working paper</p>
+            <article class="research-project">
+                <div class="research-project-header">
+                    <span class="project-status">Working paper</span>
 
                     <h3>Buffer Depletion and Price Instability</h3>
 
                     <p class="project-subtitle">
                         The inventory channel of monetary policy in U.S. manufacturing
                     </p>
+                </div>
 
+                <div class="project-body">
                     <h4>Research Question</h4>
                     <p>
                         Do interest-rate shocks affect inventory behavior and producer-price volatility in
-                        inventory-intensive sectors?
+                        inventory-intensive manufacturing sectors?
+                    </p>
+
+                    <h4>Economic Contribution</h4>
+                    <p>
+                        This study evaluates inventories as a monetary-policy transmission mechanism. It tests whether
+                        higher financing costs and weaker demand cause shipments to contract faster than inventories,
+                        producing temporary buffer accumulation and greater price instability.
                     </p>
 
                     <h4>Key Findings</h4>
                     <ul>
                         <li>
-                            After a contractionary monetary shock, inventory-intensive sectors show a significant
-                            and persistent increase in inventory-to-shipments ratios, peaking near +0.4 and remaining
+                            After a contractionary monetary shock, inventory-intensive sectors show a significant,
+                            persistent increase in inventory-to-shipments ratios, peaking near +0.4 and remaining
                             elevated for roughly 18 months.
-                        </li>
-                        <li>
-                            The increase reflects shipments contracting faster than inventories can adjust.
                         </li>
                         <li>
                             Producer-price volatility rises more in inventory-intensive sectors and peaks about
                             six months after the shock.
                         </li>
                         <li>
-                            A 12-month placebo shock produces no comparable pattern, supporting a causal interpretation.
+                            A 12-month placebo shock produces no comparable response, strengthening the causal interpretation.
+                        </li>
+                        <li>
+                            Split-sample evidence indicates that sector inventory intensity materially changes the
+                            response to monetary tightening.
                         </li>
                     </ul>
 
                     <p>
-                        <strong>Data:</strong> Census M3/FRED, BLS Producer Price Index data through FRED, and
-                        Federal Reserve Bank of San Francisco monetary-policy surprise measures.
+                        <strong>Data:</strong> Census M3/FRED, BLS PPI/FRED, Federal Reserve speeches,
+                        inflation expectations, and San Francisco Fed monetary-policy surprises.
                     </p>
 
-                    <p>
-                        <strong>Methods:</strong> Jordà local projections, two-way fixed effects, placebo tests,
-                        and split-sample robustness analysis.
-                    </p>
-
-                    <p>
-                        <strong>Software:</strong> R with a fully reproducible analytical pipeline.
-                    </p>
+                    <div class="method-tags">
+                        <span>Jordà Local Projections</span>
+                        <span>Two-Way Fixed Effects</span>
+                        <span>Placebo Tests</span>
+                        <span>Split-Sample Analysis</span>
+                        <span>R</span>
+                    </div>
 
                     <div class="project-buttons">
                         <a href="https://github.com/PBaffoe88" target="_blank" rel="noopener noreferrer" class="btn">
-                            Code <i class="fas fa-arrow-up-right-from-square"></i>
+                            <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
                 </div>
+
+                <div class="evidence-gallery">
+                    <figure>
+                        <a href="assets/images/combined_inventory_channel_grid.png" target="_blank">
+                            <img src="assets/images/combined_inventory_channel_grid.png" alt="Inventory channel descriptive and local projection evidence">
+                        </a>
+                        <figcaption>
+                            Descriptive and local-projection evidence on inventory-to-shipments ratios, inventory growth, price volatility, and producer-price inflation.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/fed_speech_phillips_curve_grid.png" target="_blank">
+                            <img src="assets/images/fed_speech_phillips_curve_grid.png" alt="Fed communication and manufacturing expectations">
+                        </a>
+                        <figcaption>
+                            Companion analysis of Fed Chair communication, inflation expectations, the unemployment gap, and manufacturing outcomes.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/placebo_inventory.png" target="_blank">
+                            <img src="assets/images/placebo_inventory.png" alt="Placebo test for inventory-to-shipments ratio">
+                        </a>
+                        <figcaption>
+                            Placebo test: the 12-month shifted shock does not reproduce the actual inventory-to-shipments response.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/placebo_price_vol.png" target="_blank">
+                            <img src="assets/images/placebo_price_vol.png" alt="Placebo test for producer price volatility">
+                        </a>
+                        <figcaption>
+                            Placebo test for producer-price volatility, showing no comparable delayed response.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/split_sample_lp.png" target="_blank">
+                            <img src="assets/images/split_sample_lp.png" alt="Inventory response by sector inventory intensity">
+                        </a>
+                        <figcaption>
+                            Split-sample local projections comparing high- and low-inventory-intensity manufacturing sectors.
+                        </figcaption>
+                    </figure>
+                </div>
             </article>
 
-            <article class="project-card">
-                <img src="assets/images/oil-geopolitical-risk.png" alt="Oil prices and geopolitical risk research">
-
-                <div class="project-card-content">
-                    <p class="project-status">Working paper + published article</p>
+            <article class="research-project">
+                <div class="research-project-header">
+                    <span class="project-status">Working paper + published article</span>
 
                     <h3>Oil Prices and Geopolitical Risk</h3>
 
                     <p class="project-subtitle">
                         What 35 years of data say about crude oil and geopolitical uncertainty
                     </p>
+                </div>
 
+                <div class="project-body">
                     <h4>Research Question</h4>
                     <p>
-                        Does geopolitical uncertainty move oil prices, or does it primarily affect oil-price volatility?
+                        Does geopolitical uncertainty generate persistent oil-price increases, or does it primarily
+                        affect volatility and market regimes?
+                    </p>
+
+                    <h4>Economic Contribution</h4>
+                    <p>
+                        The project combines regime-switching models, local projections, volatility models, and
+                        momentum indicators to distinguish price-level effects from uncertainty-driven volatility.
                     </p>
 
                     <h4>Key Findings</h4>
                     <ul>
                         <li>
                             A two-state Markov-switching model identifies a distinct high-volatility crisis regime,
-                            with probabilities rising around the 1990 Gulf War, 2008, 2014–2016, the 2020 pandemic
-                            shock, and 2022.
+                            with probabilities rising around the 1990 Gulf War, the global financial crisis,
+                            2014–2016, the 2020 pandemic shock, and 2022.
                         </li>
                         <li>
-                            Local projections show that a geopolitical-risk shock is followed by a modest cumulative
-                            decline in WTI returns of approximately 0.6% over the following month.
+                            A geopolitical-risk shock is followed by a modest cumulative decline in WTI returns
+                            of approximately 0.6% over the following month.
                         </li>
                         <li>
-                            The evidence suggests geopolitical risk is expressed more strongly through volatility
+                            The evidence indicates that geopolitical risk manifests more strongly through volatility
                             and regime switching than through persistent oil-price increases.
                         </li>
                         <li>
-                            The project also evaluates WTI time-series momentum over one-, three-, six-, and
+                            Momentum indicators reveal substantial differences across one-, three-, six-, and
                             twelve-month lookback windows.
                         </li>
                     </ul>
@@ -261,128 +783,140 @@
                         and macroeconomic indicators, 1988–2026.
                     </p>
 
-                    <p>
-                        <strong>Methods:</strong> Markov switching, EGARCH, Jordà local projections, Newey–West
-                        inference, and time-series momentum analysis.
-                    </p>
-
-                    <p><strong>Software:</strong> R.</p>
+                    <div class="method-tags">
+                        <span>Markov Switching</span>
+                        <span>EGARCH</span>
+                        <span>Jordà Local Projections</span>
+                        <span>Newey–West Inference</span>
+                        <span>Momentum Analysis</span>
+                        <span>R</span>
+                    </div>
 
                     <div class="project-buttons">
                         <a href="https://github.com/PBaffoe88" target="_blank" rel="noopener noreferrer" class="btn">
-                            Code <i class="fas fa-arrow-up-right-from-square"></i>
+                            <i class="fab fa-github"></i> View Code
                         </a>
 
                         <a href="https://www.linkedin.com/in/paul-baffoe" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            LinkedIn Article <i class="fas fa-arrow-up-right-from-square"></i>
+                            <i class="fab fa-linkedin"></i> Published Article
                         </a>
                     </div>
                 </div>
+
+                <div class="evidence-gallery">
+                    <figure>
+                        <a href="assets/images/irf_gpr_oil.png" target="_blank">
+                            <img src="assets/images/irf_gpr_oil.png" alt="Cumulative WTI return response to a geopolitical risk shock">
+                        </a>
+                        <figcaption>
+                            Cumulative WTI return response to a geopolitical-risk shock using Jordà local projections with Newey–West 95% bands.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/regime_probabilities.png" target="_blank">
+                            <img src="assets/images/regime_probabilities.png" alt="Probability of high-volatility oil market regime">
+                        </a>
+                        <figcaption>
+                            Smoothed probability of the high-volatility crisis regime from a two-state Markov-switching model.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/wti_momentum_windows.png" target="_blank">
+                            <img src="assets/images/wti_momentum_windows.png" alt="WTI momentum by lookback window">
+                        </a>
+                        <figcaption>
+                            WTI time-series momentum measured over one-, three-, six-, and twelve-month lookback windows.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="assets/images/wti_trend_regimes.png" target="_blank">
+                            <img src="assets/images/wti_trend_regimes.png" alt="WTI price, moving averages, and trend regimes">
+                        </a>
+                        <figcaption>
+                            WTI spot prices, 50- and 200-day moving averages, and trend regimes defined by the moving-average crossover.
+                        </figcaption>
+                    </figure>
+                </div>
             </article>
 
-            <article class="project-card">
-                <img src="assets/images/fiscal-policy-spillovers.png" alt="United States fiscal policy spillovers to OECD monetary policy">
-
-                <div class="project-card-content">
-                    <p class="project-status">M.S. thesis — St. Cloud State University</p>
+            <article class="research-project">
+                <div class="research-project-header">
+                    <span class="project-status">M.S. thesis — St. Cloud State University</span>
 
                     <h3>Spillover Effects of U.S. Fiscal Policy on OECD Monetary Policy</h3>
 
                     <p class="project-subtitle">
                         How U.S. fiscal shocks transmit to central-bank decisions in more than 30 economies
                     </p>
+                </div>
 
+                <div class="project-body">
                     <h4>Research Question</h4>
                     <p>
-                        How do expansionary U.S. fiscal-policy shocks influence short-term policy rates across
-                        OECD economies?
+                        How do expansionary U.S. fiscal-policy shocks influence short-term policy rates across OECD economies?
                     </p>
 
                     <h4>Key Findings</h4>
                     <ul>
-                        <li>
-                            Policy responses diverge systematically across countries.
-                        </li>
-                        <li>
-                            High-income OECD economies tend to respond to a U.S. fiscal stimulus shock with
-                            expansionary monetary policy.
-                        </li>
-                        <li>
-                            Other OECD economies are more likely to tighten monetary policy when facing the same shock.
-                        </li>
-                        <li>
-                            The two-stage design first extracts U.S. structural shocks and then estimates each
-                            country's dynamic policy-rate response.
-                        </li>
+                        <li>Monetary-policy responses diverge systematically across country groups.</li>
+                        <li>High-income OECD economies tend to respond with expansionary monetary policy.</li>
+                        <li>Other OECD economies are more likely to tighten policy when facing the same U.S. fiscal shock.</li>
+                        <li>The empirical design identifies U.S. structural shocks first and then traces country-level dynamic responses.</li>
                     </ul>
 
                     <p>
-                        <strong>Data:</strong> OECD Statistics, FRED, and national-accounts datasets.
+                        <strong>Data:</strong> OECD Statistics, FRED, and national accounts.
                     </p>
 
-                    <p>
-                        <strong>Methods:</strong> Cholesky-identified SVAR, ARDL, cointegration, impulse-response
-                        functions, and forecast-error variance decomposition.
-                    </p>
-
-                    <p><strong>Software:</strong> R and Stata.</p>
-
-                    <div class="project-buttons">
-                        <a href="https://github.com/PBaffoe88" target="_blank" rel="noopener noreferrer" class="btn">
-                            Research Portfolio <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
+                    <div class="method-tags">
+                        <span>SVAR</span>
+                        <span>ARDL</span>
+                        <span>Cointegration</span>
+                        <span>Impulse Responses</span>
+                        <span>FEVD</span>
+                        <span>R</span>
+                        <span>Stata</span>
                     </div>
                 </div>
             </article>
 
-            <article class="project-card">
-                <img src="assets/images/order-cadence-model.png" alt="Order Cadence Model for inventory planning">
-
-                <div class="project-card-content">
-                    <p class="project-status">Industry project — Bay State Milling</p>
+            <article class="research-project">
+                <div class="research-project-header">
+                    <span class="project-status">Industry project — Bay State Milling</span>
 
                     <h3>Order Cadence Model</h3>
 
                     <p class="project-subtitle">
                         A quantitative decision-support framework for procurement and inventory planning
                     </p>
+                </div>
 
+                <div class="project-body">
                     <h4>Objective</h4>
                     <p>
-                        Determine when to order and how much to order by combining demand forecasting and inventory
-                        theory in a practical tool for procurement planning.
+                        Determine when to order and how much to order by combining demand forecasts, inventory position,
+                        pipeline inventory, safety stock, lead-time uncertainty, and purchasing schedules.
                     </p>
 
-                    <h4>Project Contribution</h4>
+                    <h4>Business Contribution</h4>
                     <ul>
-                        <li>
-                            Integrated demand forecasts, inventory position, pipeline inventory, safety stock,
-                            lead-time uncertainty, and purchasing schedules into one planning framework.
-                        </li>
-                        <li>
-                            Improved planning accuracy by approximately 25% through statistically driven forecasting.
-                        </li>
-                        <li>
-                            Reduced supply-chain risk by aligning purchasing decisions with demand patterns and
-                            lead-time variability.
-                        </li>
-                        <li>
-                            Translated quantitative inventory theory into a decision-support tool designed for
-                            practical procurement use.
-                        </li>
+                        <li>Integrated forecasting and inventory theory into one operational planning framework.</li>
+                        <li>Improved planning accuracy by approximately 25%.</li>
+                        <li>Reduced supply-chain risk by aligning order timing with demand and lead-time variability.</li>
+                        <li>Translated quantitative analysis into a practical decision-support tool for procurement teams.</li>
                     </ul>
 
-                    <p>
-                        <strong>Methods:</strong> Forecasting, inventory analytics, safety-stock modeling,
-                        and operations research.
-                    </p>
-
-                    <p><strong>Software:</strong> Excel, SQL, and R.</p>
-
-                    <div class="project-buttons">
-                        <a href="https://github.com/PBaffoe88" target="_blank" rel="noopener noreferrer" class="btn">
-                            Project Overview <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
+                    <div class="method-tags">
+                        <span>Forecasting</span>
+                        <span>Inventory Analytics</span>
+                        <span>Safety Stock</span>
+                        <span>Operations Research</span>
+                        <span>Excel</span>
+                        <span>SQL</span>
+                        <span>R</span>
                     </div>
                 </div>
             </article>
@@ -399,12 +933,12 @@
             <h3>Quantitative &amp; Economic Data Analyst</h3>
             <p><strong>Bay State Milling Company</strong> | Woodland, California | April 2023 – March 2026</p>
             <ul>
-                <li>Developed quantitative forecasting, statistical reporting, and economic-analysis models using Excel, SQL, and Power BI, improving planning accuracy by 25%.</li>
-                <li>Analyzed commodity demand, purchasing behavior, inventory performance, and operational trends using large-scale datasets.</li>
-                <li>Built automated reporting systems and interactive dashboards that reduced manual reporting effort by 40%.</li>
-                <li>Designed the Order Cadence Model to integrate forecasts, inventory position, safety stock, and pipeline inventory.</li>
-                <li>Performed data-quality reviews, validation, and trend analysis to strengthen analytical reliability.</li>
-                <li>Presented findings and recommendations to cross-functional stakeholders.</li>
+                <li>Developed quantitative forecasting, statistical reporting, and economic-analysis models using Excel, SQL, and Power BI to support resource allocation, procurement planning, and operational decision-making, improving planning accuracy by 25%.</li>
+                <li>Conducted statistical analysis of commodity demand, purchasing behavior, inventory performance, and operational trends using large-scale datasets to support data-driven business strategies.</li>
+                <li>Built automated reporting systems and interactive dashboards that reduced manual reporting effort by 40% while improving visibility into economic and operational performance indicators.</li>
+                <li>Designed and implemented an Order Cadence Model integrating demand forecasts, inventory position, safety stock, and pipeline inventory to optimize purchasing decisions and reduce supply-chain risk.</li>
+                <li>Performed data-quality reviews, trend analysis, and validation procedures on high-volume operational datasets to improve forecasting reliability and analytical accuracy.</li>
+                <li>Presented analytical findings and recommendations to cross-functional stakeholders, supporting evidence-based operational and strategic planning.</li>
             </ul>
         </div>
 
@@ -412,13 +946,13 @@
             <h3>Graduate Economics Research Assistant</h3>
             <p><strong>St. Cloud State University — Department of Economics</strong> | August 2021 – April 2023</p>
             <ul>
-                <li>Conducted empirical research using SVAR, ARDL, regression analysis, and time-series forecasting.</li>
-                <li>Developed models using data from FRED, BLS, BEA, OECD, and the World Bank.</li>
-                <li>Performed literature reviews, methodology validation, statistical testing, and quantitative analysis.</li>
-                <li>Automated data cleaning, transformation, visualization, and reproducible research workflows in R.</li>
+                <li>Conducted empirical economic research using SVAR, ARDL, regression analysis, and time-series forecasting.</li>
+                <li>Developed economic models using data from FRED, BLS, BEA, OECD, World Bank, and other public databases.</li>
+                <li>Performed literature reviews, methodology validation, statistical testing, and quantitative analysis supporting academic and policy-oriented research.</li>
+                <li>Automated data cleaning, transformation, visualization, and reproducible research workflows using R.</li>
                 <li>Retrieved and processed economic datasets through APIs and public data portals.</li>
                 <li>Drafted technical reports, research summaries, and methodology documentation.</li>
-                <li>Presented findings to academic, professional, and policy-focused audiences.</li>
+                <li>Presented research findings to academic, professional, and policy-focused audiences.</li>
             </ul>
         </div>
 
@@ -426,11 +960,11 @@
             <h3>District Data Quality Monitor</h3>
             <p><strong>Ghana Statistical Service — National Census Operation</strong> | February 2021 – August 2021</p>
             <ul>
-                <li>Monitored and validated census data collection across 32 communities.</li>
-                <li>Conducted statistical quality-assurance reviews and consistency checks.</li>
-                <li>Used Stata, Excel, and CSPro to analyze demographic, labor-market, and socioeconomic data.</li>
-                <li>Collaborated with field officers and supervisors to resolve reporting discrepancies.</li>
-                <li>Prepared statistical summaries and quality-assurance documentation for government stakeholders.</li>
+                <li>Monitored and validated census and survey data collection across 32 communities.</li>
+                <li>Conducted data verification, statistical quality-assurance reviews, and consistency checks.</li>
+                <li>Used Stata, Excel, and CSPro to analyze demographic, labor-market, and socioeconomic datasets.</li>
+                <li>Collaborated with field officers and regional supervisors to resolve reporting discrepancies.</li>
+                <li>Prepared statistical summaries, survey-monitoring reports, and quality-assurance documentation for government stakeholders.</li>
             </ul>
         </div>
 
@@ -439,8 +973,8 @@
             <p><strong>Caldera Equity Group LLC</strong> | Remote | February 2026 – Present</p>
             <ul>
                 <li>Conduct pricing and valuation analysis using market, transaction, and operational datasets.</li>
-                <li>Build Excel and Power BI dashboards tracking pricing trends, comparable transactions, and performance metrics.</li>
-                <li>Analyze market and operational data to support reporting accuracy and business decisions.</li>
+                <li>Build Excel- and Power BI-based dashboards to monitor pricing trends, comparable transactions, and business performance.</li>
+                <li>Analyze market and operational data to identify trends, improve reporting accuracy, and support business decisions.</li>
             </ul>
         </div>
     </div>
@@ -506,6 +1040,24 @@
                 </ul>
             </div>
 
+            <div class="skill-column">
+                <div class="skill-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning &amp; AI</h3>
+                </div>
+
+                <ul class="skill-list">
+                    <li>Predictive Modeling</li>
+                    <li>Sentiment Analysis</li>
+                    <li>Natural Language Processing</li>
+                    <li>SVM</li>
+                    <li>LSTM</li>
+                    <li>BERT</li>
+                    <li>Feature Engineering</li>
+                    <li>Model Validation</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 </section>
@@ -547,11 +1099,11 @@
 
         <form action="https://formsubmit.co/kojosuccess88@gmail.com" method="POST" class="contact-form">
             <p>
-                Interested in discussing applied economic research, policy analysis, forecasting, or quantitative
-                business analytics? I would be glad to hear from you.
+                I am open to economist, economic research, policy analysis, forecasting, and quantitative analytics opportunities.
+                I also welcome research collaboration and professional discussion.
             </p>
 
-            <input type="hidden" name="_subject" value="New message from Paul Baffoe's research portfolio">
+            <input type="hidden" name="_subject" value="New message from Paul Baffoe's economist portfolio">
             <input type="hidden" name="_captcha" value="false">
 
             <div class="form-group">
